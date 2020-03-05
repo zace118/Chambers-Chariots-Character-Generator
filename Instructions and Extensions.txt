@@ -1,0 +1,36 @@
+Must generate a character sheet with race, class, and ability rolls.
+Must be full stack(FE, BE, and DB)
+
+Ideas for extension:
+Allow/randomly assign spell choices
+Full selection of character traits based upon level
+Automatic assignment of stat rolls based on the class
+Full customization of the character and multiclassing
+Encounter generator (Same thing but with monsters: amount, type, and level of monsters)
+
+----------------------------------------------------------------
+That's it! Build out what you think would be awesome
+----------------------------------------------------------------
+
+
+database - - - - - - - -
+ *Where you can insert created characters to be recalled
+
+CREATE DATABASE created_characters (
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(20) NOT NULL,
+	race VARCHAR(15) NOT NULL,
+	class VARCHAR(15) NOT NULL,
+	level INT,
+	hp INT,
+	-- Idk what else to put...ability scores, by type??
+	
+)
+
+
+
+JS - - - - - - - - - - - 
+An array of races
+let races = [Elf, Gnome, etc]
+An array of classes = [Bard, Barbarian, etc.]
+An array of ability rolls
