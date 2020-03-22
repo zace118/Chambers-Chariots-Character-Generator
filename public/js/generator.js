@@ -1,57 +1,83 @@
-// // Something along these lines to get the disabled dropdown to enable
-// $("select[name='mainRace']").change(function () {
-//     $("select[name='subRace']").removeAttr("disabled");
-// });
+$(document).ready(function () {
 
-// On select of a certain race, different option will appear in the subrace dropdown. #charSubRace
+    // This .change function is what gives the sub-race drop down the ability to contain the appropriate choices per the character's race, the question before. 
+    $("#charRace").change(function () {
+        let charRace = $("#charRace").val().trim();
+        console.log(charRace);
+        // console.log(charRace === "dwarf");
+
+        switch (charRace) {
+            case "dwarf":
+                // Clear the dropdown prior to appending sub race choices
+                $("#charSubRace").empty();
+                // Appending the sub race choices
+                $("#charSubRace").append('<option value="hillDwarf" selected="selected">Hill Dwarf</option>');
+                $("#charSubRace").append('<option value="mountainDwarf" selected="selected">Mountain Dwarf</option>');
+                $("#charSubRace").append('<option value="" selected="selected"></option>');
+                break;
+            case "elf":
+                // Clear the dropdown prior to appending sub race choices
+                $("#charSubRace").empty();
+
+                // Appending the sub race choices
+                $("#charSubRace").append('<option value="highElf" selected="selected">High Elf</option>');
+                $("#charSubRace").append('<option value="woodElf" selected="selected">Wood Elf</option>');
+                $("#charSubRace").append('<option value="darkElf" selected="selected">Dark Elf (Drow)</option>');
+                $("#charSubRace").append('<option value="" selected="selected"></option>');
+                break;
+            case "halfling":
+                // Clear the dropdown prior to appending sub race choices
+                $("#charSubRace").empty();
+
+                // Appending the sub race choices
+                $("#charSubRace").append('<option value="lightfootHalfling" selected="selected">Lightfoot Halfling</option>');
+                $("#charSubRace").append('<option value="stoutHalfling" selected="selected">Stout Halfling</option>');
+                $("#charSubRace").append('<option value="" selected="selected"></option>');
+                break;
+            case "gnome":
+                // Clear the dropdown prior to appending sub race choices
+                $("#charSubRace").empty();
+
+                // Appending the sub race choices
+                $("#charSubRace").append('<option value="forestGnome" selected="selected">Forest Gnome</option>');
+                $("#charSubRace").append('<option value="rockGnome" selected="selected">Rock Gnome</option>');
+                $("#charSubRace").append('<option value="" selected="selected"></option>');
+                break;
+        }
+    });
 
 
-// -----------------------
-// Dwarf
-// ---Hill Dwarf
-// ---Mountain Dwarf
-// -----------------------
-// Elf
-// ---High Elf
-// ---Wood Elf
-// ---Dark Elf (Drow)
-// -----------------------
-// Halfling
-// ---Lightfoot Halfling
-// ---Stout Halfling
-// -----------------------
-// Gnome
-// ---Forest Gnome
-// ---Rock Gnome
-// -----------------------
+    // This function is how the ability score roll is attained, but also function as a dice roller in general.
+    // The num parameter refers to the amount of dice and the size parameter dictates the size of the dice. (ex.4d6, 1d100, 2d10)
+    function dieRoll(num, size) {
+        let rollResults = [];
 
+        for (let i = 0; i < num; i++) {
+            // Push into array
+            rollResults.push(Math.floor(Math.random() * size) + 1);
+        }
 
-// function addOption() {
-//     optionText = 4;
-// }
+        console.log(rollResults);
 
-$("#charRace").change(function () {
-    let charRace = ($("#charRace").val());
-    console.log(charRace);
+        // Get the largest three results
+        // CODE GOES HERE
 
-    switch (charRace) {
-        case "dwarf":
-            // $("#charSubRace").append($('<option>').val('hillDwarf').text('Hill Dwarf'));
-            // $("#charSubRace").append($('<option>').val('mountainDwarf').text('Mountain Dwarf'));
+        // Add them together
+        // CODE GOES HERE
 
-            $("#charSubRace").append('<option value="hillDwarf" selected="selected">Hill Dwarf</option>');
+        // Return that new value
+        // CODE GOES HERE
 
-
-            break;
-        case "elf":
-            console.log("summol' boosheeit");
-            break;
-        case "halfling":
-            console.log("summol' boosheeit");
-            break;
-        case "gnome":
-            console.log("summol' boosheeit");
-            break;
     }
-})
 
+
+    $("#str").click(function () {
+        console.log("The click works");
+        dieRoll(4, 6);
+
+        // This is how the button will disappear after the user clicks on it.
+        $("#str").hide();
+    });
+
+
+});
