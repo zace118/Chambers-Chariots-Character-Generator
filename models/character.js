@@ -1,15 +1,15 @@
-module.exports = function (sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
     const SubmitCharacter = sequelize.define("SubmitCharacter", {
         name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         race: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         subrace: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         class: {
