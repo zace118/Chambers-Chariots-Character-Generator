@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chambers & Chariots</title>
+    <title>Chambers & Chariots - Generator</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -32,10 +32,10 @@
         </div>
     </nav>
     <div class="container">
-        <form>
+        <form id="characterCreator">
             <div class="form-group">
                 <label>Character Name</label>
-                <input type="email" class="form-control" id="charName">
+                <input type="text" class="form-control" id="charName">
             </div>
             <div class="form-group">
                 <label for="chooseRace">Choose race (if race has sub-race options, they will pop up in the next drop
@@ -98,19 +98,73 @@
             <h5>Roll for Ability Scores</h5>
             <p>But be warned! Once you roll for a score, you don't get to re-roll! Good luck!</p>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Strength</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-                <div class="input-group-append">
-                    <!-- !!!NOTE!!! I had to take out the id of button-addon2 from here for the click function to work -->
-                    <button class="btn btn-outline-secondary" type="button" id="str">Roll</button>
+            <div class="container">
+                <div class="row">
+                    <!-- Strength card -->
+
+                    <div class="card text-center" id="strCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Strength</h5>
+                            <p class="card-text" id="strInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="str">Roll</button>
+                        </div>
+                    </div>
+
+                    <!-- Dexterity card -->
+                    <div class="card text-center" id="dexCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dexterity</h5>
+                            <p class="card-text" id="dexInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="dex">Roll</button>
+                        </div>
+                    </div>
+
+                    <!-- Constitution card -->
+                    <div class="card text-center" id="conCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Constitution</h5>
+                            <p class="card-text" id="conInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="con">Roll</button>
+                        </div>
+                    </div>
+
+                    <!-- Intelligence card -->
+                    <div class="card text-center" id="intCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Intelligence</h5>
+                            <p class="card-text" id="intInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="int">Roll</button>
+                        </div>
+                    </div>
+
+                    <!-- Wisdom card -->
+                    <div class="card text-center" id="wisCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wisdom</h5>
+                            <p class="card-text" id="wisInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="wis">Roll</button>
+                        </div>
+                    </div>
+
+                    <!-- Charisma card -->
+                    <div class="card text-center" id="chaCard" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Charisma</h5>
+                            <p class="card-text" id="chaInput" style="font-size: 30px"></p>
+                            <button class="btn btn-primary" type="button" id="cha">Roll</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
+            <br />
 
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-secondary btn-lg btn-block" id="submit">Submit and create
+                character</button>
+
+            <br />
 
         </form>
     </div>

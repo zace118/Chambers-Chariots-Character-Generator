@@ -1,6 +1,10 @@
 $(document).ready(function () {
 
+    // -----------------------------------------------------------
+
     // This .change function is what gives the sub-race drop down the ability to contain the appropriate choices per the character's race, the question before. 
+    // -----------------------------------------------------------
+
     $("#charRace").change(function () {
         let charRace = $("#charRace").val().trim();
         console.log(charRace);
@@ -45,7 +49,11 @@ $(document).ready(function () {
                 break;
         }
     });
+    // -----------------------------------------------------------
 
+
+
+    // -----------------------------------------------------------
 
     // This function is how the ability score roll is attained, but also function as a dice roller in general.
     // The num parameter refers to the amount of dice and the size parameter dictates the size of the dice. (ex.4d6, 1d100, 2d10)
@@ -59,25 +67,160 @@ $(document).ready(function () {
 
         console.log(rollResults);
 
+    };
+    // -----------------------------------------------------------
+
+
+
+
+    // -----------------------------------------------------------
+
+    // The num parameter refers to the amount of dice and the size parameter dictates the size of the dice. (ex.4d6, 1d100, 2d10)
+    // -----------------------------------------------------------
+
+    function abilityScoreRoll(num, size, ability) {
+        let rollResults = [];
+
+        for (let i = 0; i < num; i++) {
+            // Push into array
+            rollResults.push(Math.floor(Math.random() * size) + 1);
+        };
+
         // Get the largest three results
-        // CODE GOES HERE
+        const ordered = rollResults.sort(function (a, b) {
+            if (a > b) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
 
         // Add them together
-        // CODE GOES HERE
+        const abilityScore = rollResults[1] + rollResults[2] + rollResults[3];
 
-        // Return that new value
-        // CODE GOES HERE
+        // Append that new value to the appropriate input field
+        $(`#${ability}Input`).text(abilityScore);
 
-    }
+    };
+    // -----------------------------------------------------------
 
+
+
+
+    // -----------------------------------------------------------
+
+    // These are the .click functions that will run the abilityScoreRoll functions per whatever ability score the user wants to roll
+    // -----------------------------------------------------------
 
     $("#str").click(function () {
-        console.log("The click works");
-        dieRoll(4, 6);
-
+        // console.log("The str click works");
+        abilityScoreRoll(4, 6, 'str');
         // This is how the button will disappear after the user clicks on it.
         $("#str").hide();
     });
 
+    $("#dex").click(function () {
+        // console.log("The dex click works");
+        abilityScoreRoll(4, 6, 'dex');
+        // This is how the button will disappear after the user clicks on it.
+        $("#dex").hide();
+    });
+
+    $("#con").click(function () {
+        // console.log("The con click works");
+        abilityScoreRoll(4, 6, 'con');
+        // This is how the button will disappear after the user clicks on it.
+        $("#con").hide();
+    });
+
+    $("#int").click(function () {
+        // console.log("The int click works");
+        abilityScoreRoll(4, 6, 'int');
+        // This is how the button will disappear after the user clicks on it.
+        $("#int").hide();
+    });
+
+    $("#wis").click(function () {
+        // console.log("The wis click works");
+        abilityScoreRoll(4, 6, 'wis');
+        // This is how the button will disappear after the user clicks on it.
+        $("#wis").hide();
+    });
+
+    $("#cha").click(function () {
+        // console.log("The cha click works");
+        abilityScoreRoll(4, 6, 'cha');
+        // This is how the button will disappear after the user clicks on it.
+        $("#cha").hide();
+    });
+
+    // -----------------------------------------------------------
+
+
+    const submitCharacterForm = $("form#characterCreator");
+
+    submitCharacterForm.on("submit", function (event) {
+        event.preventDefault();
+        // console.log("Submit button works");
+
+        const charName = $("#charName").val().trim();
+        const charRace = $("#charRace").val().trim();
+        const charSubRace = $("#charSubRace").val().trim();
+        const charClass = $("#charClass").val().trim();
+        const charAlignment = $("#charAlignment").val().trim();
+        // ------------------------------------------------------
+        const str = $("#strInput").text();
+        const dex = $("#dexInput").text();
+        const con = $("#conInput").text();
+        const int = $("#intInput").text();
+        const wis = $("#wisInput").text();
+        const cha = $("#chaInput").text();
+
+
+        // console.log(`Name: ${charName}\nRace: ${charRace}\nSubRace: ${charSubRace}\nClass: ${charClass}\nAlignment: ${charAlignment}`);
+        // console.log(str, dex, con, int, wis, cha);
+
+        const characterData = {
+            name: charName,
+            race: charRace,
+            subrace: charSubRace,
+            class: charClass,
+            alignment: charAlignment,
+            strScore: str,
+            dexScore: dex,
+            conScore: con,
+            intScore: int,
+            wisScore: wis,
+            chaScore: cha
+        };
+
+        if (!characterData.name || !characterData.race || !characterData.subrace || !characterData.class || !characterData.alignment || !characterData.strScore || !characterData.dexScore || !characterData.conScore || !characterData.intScore || !characterData.wisScore || !characterData.chaScore) {
+            return;
+        };
+
+        // If we have all the appropriate data, run the submitCharacter function
+        postCharacter(characterData.name, characterData.race, characterData.subrace, characterData.class, characterData.alignment, characterData.strScore, characterData.dexScore, characterData.conScore, characterData.intScore, characterData.wisScore, characterData.chaScore)
+
+    });
+
+
+    function postCharater(name, race, subrace, charClass, alignment, str, dex, con, int, wis, cha) {
+        $.post("api/post_character", {
+            name: name,
+            race: race,
+            subrace: subrace,
+            class: charClass,
+            alignment: alignment,
+            strScore: str,
+            dexScore: dex,
+            conScore: con,
+            intScore: int,
+            wisScore: wis,
+            chaScore: cha
+        }).then(function (data) {
+            // Need to change route to where ever we want users redirected after charcter has been posted
+            window.location.replace("/profile.html");
+        })
+    }
 
 });
