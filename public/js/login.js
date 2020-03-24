@@ -33,6 +33,7 @@ $(document).ready(function () {
             })
             .catch(function (err) {
                 console.log(err);
+                alert("Oops! You entered an incorrect email or password! Try again!");
             });
     }
 

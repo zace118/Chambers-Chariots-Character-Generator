@@ -29,6 +29,7 @@ module.exports = function (app) {
 
     // Route for logging user out
     app.get("/logout", function (req, res) {
+        console.log("You've been logged out!");
         req.logout();
         res.redirect("/");
     });
@@ -95,10 +96,10 @@ module.exports = function (app) {
     // Route for getting the all the posted characters data
     app.get("/api/post_character", function (req, res) {
         // findAll returns all entries for a table when used with no options
-        db.SubmitCharacter.findAll({}).then(function (char) {
-            console.log(char);
+        db.SubmitCharacter.findAll({}).then(function (characters) {
+            console.log(characters);
             // We have access to the todos as an argument inside of the callback function
-            res.json(char);
+            res.json(characters);
         });
     });
 }
