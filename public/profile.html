@@ -16,71 +16,27 @@
 </head>
 
 <body>
-    <!-- ---------------------------------------- -->
-    <div class="d-flex" id="wrapper">
-
-        <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">USERNAME_GOES_HERE </div>
-            <ul>
-                <li>Name</li>
-                <li>City, State</li>
-                <li>Favorite TTRPG</li>
-                <li>Favorite Character Created</li>
-            </ul>
-        </div>
-
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" id="menu-toggle"><b>Chambers & Chariots</b></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="#">Profile<span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="generator.html">Character Generator</a>
-                        <a class="nav-item nav-link" href="#">Dice Page</a>
-                        <a class="nav-item nav-link" href="#">Logout</a>
-                    </div>
-                </div>
-            </nav>
-
-            <div class="container-fluid">
-                <h1 class="mt-4">Profile</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta quis sem laoreet finibus. Nam
-                    congue vitae leo rutrum pellentesque. Donec accumsan odio ac tellus euismod tincidunt. Fusce
-                    vulputate, leo sed efficitur ultrices, neque purus euismod ex, sed pellentesque dolor tellus posuere
-                    mi. Pellentesque sed euismod nisi, id fringilla est. Suspendisse pretium varius leo, quis mattis
-                    orci ultrices eget. In a vulputate metus. Etiam bibendum est augue, eget luctus tortor dapibus quis.
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ac
-                    mattis nisl. Vestibulum tincidunt hendrerit lectus non vulputate. Donec rutrum ligula sed accumsan
-                    fringilla. Cras sed eros orci.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" id="menu-toggle"><b>Chambers & Chariots</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Profile<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="generator.html">Character Generator</a>
+                <a class="nav-item nav-link" href="#">Dice Page</a>
+                <a class="nav-item nav-link" href="#">Logout</a>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
+    </nav>
 
-    </div>
-    <!-- /#wrapper -->
+    <h1 id="welcomeBack">Welcome back, zace118!</h1>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-    <!-- ---------------------------------------- -->
-
+    <!-- Custom JS Script -->
+    <script src="/js/profile.js"></script>
 
 </body>
 

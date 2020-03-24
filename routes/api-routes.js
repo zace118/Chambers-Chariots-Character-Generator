@@ -19,8 +19,8 @@ module.exports = function (app) {
             email: req.body.email,
             password: req.body.password
         })
-            .then(function () {
-                res.redirect(307, "/api/login");
+            .then(function (data) {
+                res.status(200).json(data)
             })
             .catch(function (err) {
                 res.status(401).json(err);
@@ -58,19 +58,21 @@ module.exports = function (app) {
             name: req.body.name,
             race: req.body.race,
             subrace: req.body.subrace,
-            class: req.body.charClass,
+            class: req.body.class,
             alignment: req.body.alignment,
-            strScore: req.body.str,
-            dexScore: req.body.dex,
-            conScore: req.body.con,
-            intScore: req.body.int,
-            wisScore: req.body.wis,
-            chaScore: req.body.cha
+            strScore: req.body.strScore,
+            dexScore: req.body.dexScore,
+            conScore: req.body.conScore,
+            intScore: req.body.intScore,
+            wisScore: req.body.wisScore,
+            chaScore: req.body.chaScore
         }).then(function (dbPost) {
             // return the result to the user with res.json
+            console.log("Success! Line 71.apiroutes");
             res.json(dbPost);
         }).catch(function (err) {
-            res.status(401).json(err);
+            console.log(err)
+            // res.status(401).json(err);
         });
     });
 

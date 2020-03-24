@@ -29,11 +29,12 @@ $(document).ready(function () {
             password: password
         })
             .then(function () {
-                window.location.replace("/members");
-                // If there's an error, log the error
+                window.location.pathname = "/profile"
             })
             .catch(function (err) {
                 console.log(err);
             });
     }
+
+
 });

@@ -47,6 +47,15 @@ $(document).ready(function () {
                 $("#charSubRace").append('<option value="rockGnome" selected="selected">Rock Gnome</option>');
                 $("#charSubRace").append('<option value="" selected="selected"></option>');
                 break;
+
+            case "human":
+            case "dragonborn":
+            case "halfElf":
+            case "halfOrc":
+            case "tiefling":
+                $("#charSubRace").empty();
+
+                break;
         }
     });
     // -----------------------------------------------------------
@@ -165,7 +174,7 @@ $(document).ready(function () {
 
         const charName = $("#charName").val().trim();
         const charRace = $("#charRace").val().trim();
-        const charSubRace = $("#charSubRace").val().trim();
+        const charSubRace = $("#charSubRace").val();
         const charClass = $("#charClass").val().trim();
         const charAlignment = $("#charAlignment").val().trim();
         // ------------------------------------------------------
@@ -194,6 +203,8 @@ $(document).ready(function () {
             chaScore: cha
         };
 
+        // console.log(characterData)
+
         if (!characterData.name || !characterData.race || !characterData.subrace || !characterData.class || !characterData.alignment || !characterData.strScore || !characterData.dexScore || !characterData.conScore || !characterData.intScore || !characterData.wisScore || !characterData.chaScore) {
             return;
         };
@@ -204,7 +215,7 @@ $(document).ready(function () {
     });
 
 
-    function postCharater(name, race, subrace, charClass, alignment, str, dex, con, int, wis, cha) {
+    function postCharacter(name, race, subrace, charClass, alignment, str, dex, con, int, wis, cha) {
         $.post("api/post_character", {
             name: name,
             race: race,
@@ -218,8 +229,10 @@ $(document).ready(function () {
             wisScore: wis,
             chaScore: cha
         }).then(function (data) {
+            console.log(`Line 223.gen.js DATA: ${data}`);
             // Need to change route to where ever we want users redirected after charcter has been posted
-            window.location.replace("/profile.html");
+            window.location.pathname = "/profile"
+
         })
     }
 

@@ -7,43 +7,43 @@ body {
 }
 
 #strCard {
-  background-image: url("/public/assets/img/iconfinder_34_Swords-sm.png"),
-    url("/public/assets/img/iconfinder_34_Swords-sm.png");
+  background-image: url("/assets/img/iconfinder_34_Swords-sm.png"),
+    url("/assets/img/iconfinder_34_Swords-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }
 
 #dexCard {
-  background-image: url("/public/assets/img/iconfinder_Runner-sm.png"),
-    url("/public/assets/img/iconfinder_Runner-sm.png");
+  background-image: url("/assets/img/iconfinder_Runner-sm.png"),
+    url("/assets/img/iconfinder_Runner-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }
 
 #conCard {
-  background-image: url("/public/assets/img/iconfinder_55_Shield-sm.png"),
-    url("/public/assets/img/iconfinder_55_Shield-sm.png");
+  background-image: url("/assets/img/iconfinder_55_Shield-sm.png"),
+    url("/assets/img/iconfinder_55_Shield-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }
 
 #intCard {
-  background-image: url("/public/assets/img/iconfinder_Brain-sm.png"),
-    url("/public/assets/img/iconfinder_Brain-sm.png");
+  background-image: url("/assets/img/iconfinder_Brain-sm.png"),
+    url("/assets/img/iconfinder_Brain-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }
 
 #wisCard {
-  background-image: url("/public/assets/img/iconfinder_Scroll-sm.png"),
-    url("/public/assets/img/iconfinder_Scroll-sm.png");
+  background-image: url("/assets/img/iconfinder_Scroll-sm.png"),
+    url("/assets/img/iconfinder_Scroll-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }
 
 #chaCard {
-  background-image: url("/public/assets/img/iconfinder_33_Masks-sm.png"),
-    url("/public/assets/img/iconfinder_33_Masks-sm.png");
+  background-image: url("/assets/img/iconfinder_33_Masks-sm.png"),
+    url("/assets/img/iconfinder_33_Masks-sm.png");
   background-repeat: no-repeat;
   background-position: left center, right center;
 }

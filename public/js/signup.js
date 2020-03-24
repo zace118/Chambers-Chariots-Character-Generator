@@ -33,14 +33,13 @@ $(document).ready(function () {
             password: password
         })
             .then(function (data) {
-                window.location.replace("/members");
-                // If there's an error, handle it by throwing up a bootstrap alert
+                window.location.pathname = "/profile"
             })
-            .catch(handleLoginErr);
+        // .catch(function (err) {
+        //     $("#alert .msg").text(err.responseJSON);
+        //     $("#alert").fadeIn(500);
+        // });
     }
 
-    function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
-    }
+
 });
