@@ -169,6 +169,7 @@ $(document).ready(function () {
     const submitCharacterForm = $("form#characterCreator");
 
     submitCharacterForm.on("submit", function (event) {
+
         event.preventDefault();
         // console.log("Submit button works");
 
@@ -205,12 +206,14 @@ $(document).ready(function () {
 
         // console.log(characterData)
 
-        if (!characterData.name || !characterData.race || !characterData.subrace || !characterData.class || !characterData.alignment || !characterData.strScore || !characterData.dexScore || !characterData.conScore || !characterData.intScore || !characterData.wisScore || !characterData.chaScore) {
+        if (!characterData.name || !characterData.race || !characterData.class || !characterData.alignment || !characterData.strScore || !characterData.dexScore || !characterData.conScore || !characterData.intScore || !characterData.wisScore || !characterData.chaScore) {
+            // console.log("This Works!!!")
             return;
         };
-
         // If we have all the appropriate data, run the submitCharacter function
         postCharacter(characterData.name, characterData.race, characterData.subrace, characterData.class, characterData.alignment, characterData.strScore, characterData.dexScore, characterData.conScore, characterData.intScore, characterData.wisScore, characterData.chaScore)
+        console.log("This Works!!!")
+
 
     });
 
