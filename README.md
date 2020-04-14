@@ -32,5 +32,5 @@ See also the list of [contributors](https://github.com/zace118/Chambers-Chariots
 ## Acknowledgments
 
 * Big shout out to my instructor, [JJ Brenner](https://github.com/breadstickguy) for giving me this challenge and pushing me to finsih it! Thanks JJ!
-* High fives to my T.A.'s, [Mike Mayo](https://github.com/Magic-Mayo), [Andrew Mendez](https://github.com/MendezAndrewM), and David Barrios
+* High fives to my T.A.'s, [Mike Mayo](https://github.com/Magic-Mayo), [Andrew Mendez](https://github.com/MendezAndrewM), and [David Barrios](https://github.com/dbarrios13)
 * Finger guns pointing to my partner in crime with D&D related ideas, [Evan Pylar](https://github.com/Evan-M-Py).
