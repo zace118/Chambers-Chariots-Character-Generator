@@ -2,8 +2,13 @@
 Chambers & Chariots is a full stack Dungeons & Dragons character generator. The app will allow you to choose different options to choose from when creating your character. It also has a rolling feature to simulate rolling for your character's ability scores.
 
 ![Login Page](/public/assets/img/Login.png)
+
+
 ![Main Page](/public/assets/img/MainPage.png)
+
+
 ![GIF](/public/assets/img/Ch&ChCreator.gif)
+
 
 ## Deployment
 
